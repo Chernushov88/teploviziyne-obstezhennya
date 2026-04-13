@@ -1,0 +1,2 @@
+# teploviziyne-obstezhennya
+teploviziyne-obstezhennya
