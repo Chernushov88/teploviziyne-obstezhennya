@@ -1,0 +1,52 @@
+// Variables Bootstrap 4
+// color
+$red: #ff000f;
+$green: #00ab45;
+$light-green: #00b92d;
+$orange: #fca70c;
+$yellow: #ffd943;
+$violet: #7057d6;
+$purple: #555be4;
+$blue: #007bc9;
+
+// Thermal Vision Colors
+$thermal-blue: #1a2a6c;
+$thermal-dark-blue: #0f1b47;
+$thermal-red: #f24537;
+$thermal-red-dark: #e63a27;
+$thermal-light: #f8f9fa;
+$thermal-text: #333;
+$thermal-text-light: #666;
+$thermal-border: #e9ecef;
+$thermal-white: #ffffff;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+// Transitions
+$transition: all 0.3s ease;
+$ease-out: 0.25s ease-in-out;
+
+// container size
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1800px,
+);
+
+// fonts
+$sizeBasik: 17px;
+$colorBasik: #666;
+$font-family: "RobotoCondensed", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$font-size-base: 16px;
+$line-height-base: 1.6;
+
+@media (min-width: 991px) {
+  .container {
+    max-width: 1140px;
+    padding-left: 80px;
+  }
+}
