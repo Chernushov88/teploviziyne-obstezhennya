@@ -1,0 +1,432 @@
+.main {
+  background:
+    radial-gradient(circle at top right, rgba($thermal-red, 0.28), transparent 32%),
+    radial-gradient(circle at top left, rgba($blue, 0.22), transparent 28%),
+    linear-gradient(135deg, $thermal-dark-blue 0%, #081126 52%, #040814 100%);
+  height: auto;
+  min-height: 100vh;
+}
+
+.thermal-hero {
+  position: relative;
+  z-index: 1;
+  padding: 70px 0 110px;
+  color: $thermal-white;
+
+  &__content {
+    max-width: 620px;
+  }
+
+  &__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border: 1px solid rgba($thermal-white, 0.18);
+    border-radius: 999px;
+    background-color: rgba($thermal-white, 0.06);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 700;
+
+    span {
+      color: $thermal-red;
+    }
+  }
+
+  &__text {
+    margin-bottom: 32px;
+    font-size: 22px;
+    line-height: 1.5;
+    color: rgba($thermal-white, 0.82);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  &__note {
+    max-width: 240px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba($thermal-white, 0.74);
+  }
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  &__stat {
+    padding: 22px 20px;
+    border: 1px solid rgba($thermal-white, 0.12);
+    border-radius: 18px;
+    background-color: rgba($thermal-black, 0.5);
+    backdrop-filter: blur(10px);
+    transition: transform $ease-out;
+
+    &:hover {
+      transform: translateY(-6px);
+    }
+  }
+
+  &__stat-value {
+    margin-bottom: 6px;
+    font-size: 30px;
+    font-weight: 700;
+    color: $yellow;
+  }
+
+  &__stat-text {
+    font-size: 15px;
+    line-height: 1.45;
+    color: rgba($thermal-white, 0.75);
+  }
+
+  &__visual {
+    position: relative;
+  }
+
+  &__panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba($thermal-white, 0.12);
+    border-radius: 28px;
+    background: linear-gradient(160deg, rgba($thermal-white, 0.1), rgba($thermal-white, 0.03));
+    box-shadow: $shadow-lg;
+
+    img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.04);
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background-color: $thermal-white;
+    box-shadow: $shadow-md;
+    color: $thermal-dark-blue;
+    font-size: 15px;
+    font-weight: 700;
+
+    i {
+      color: $thermal-red;
+    }
+
+    &--top {
+      top: 24px;
+      right: 24px;
+    }
+
+    &--bottom {
+      left: -24px;
+      bottom: 36px;
+    }
+  }
+}
+
+.thermal-section {
+  padding: 96px 0;
+
+  &--alt {
+    background-color: $thermal-light;
+  }
+
+  &__heading {
+    max-width: 760px;
+    margin: 0 auto 56px;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: $thermal-red;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 48px;
+    line-height: 1.1;
+    font-weight: 700;
+    color: $thermal-dark-blue;
+  }
+
+  &__text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: $thermal-text-light;
+  }
+}
+
+.thermal-conditions {
+  &__card {
+    height: 100%;
+    padding: 32px 28px;
+    border: 1px solid $thermal-border;
+    border-radius: 24px;
+    background-color: $thermal-white;
+    box-shadow: $shadow-sm;
+    transition:
+      transform $ease-out,
+      box-shadow $ease-out,
+      border-color $ease-out;
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: rgba($thermal-red, 0.3);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 68px;
+    height: 68px;
+    margin-bottom: 22px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba($thermal-red, 0.14), rgba($blue, 0.12));
+    color: $thermal-red;
+    font-size: 28px;
+  }
+
+  &__card-title {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: $thermal-dark-blue;
+  }
+
+  &__card-text {
+    font-size: 17px;
+    line-height: 1.65;
+    color: $thermal-text-light;
+  }
+}
+
+.thermal-capabilities {
+  &__item {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 28px;
+    background-color: $thermal-white;
+    box-shadow: $shadow-sm;
+    transition:
+      transform $ease-out,
+      box-shadow $ease-out;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-lg;
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &__item:hover &__image img {
+    transform: scale(1.05);
+  }
+
+  &__content {
+    padding: 28px;
+  }
+
+  &__title {
+    margin-bottom: 14px;
+    font-size: 26px;
+    font-weight: 700;
+    color: $thermal-dark-blue;
+  }
+
+  &__text {
+    font-size: 17px;
+    line-height: 1.65;
+    color: $thermal-text-light;
+  }
+}
+
+.thermal-benefits {
+  &__grid {
+    row-gap: 24px;
+  }
+
+  &__item {
+    height: 100%;
+    padding: 28px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba($thermal-white, 0.96), rgba($thermal-white, 0.82));
+    border: 1px solid rgba($thermal-white, 0.1);
+    box-shadow: $shadow-sm;
+    transition:
+      transform $ease-out,
+      box-shadow $ease-out;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    background-color: rgba($yellow, 0.24);
+    color: $thermal-red;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  &__title {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: $thermal-dark-blue;
+  }
+
+  &__text {
+    font-size: 17px;
+    line-height: 1.65;
+    color: $thermal-text-light;
+  }
+}
+
+.thermal-feedback {
+  background-color: $thermal-light;
+
+  &__card {
+    height: 100%;
+    padding: 32px;
+    border-radius: 24px;
+    background-color: $thermal-white;
+    box-shadow: $shadow-sm;
+  }
+
+  &__name {
+    margin-bottom: 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: $thermal-dark-blue;
+  }
+
+  &__role {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: $thermal-red;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  &__text {
+    font-size: 17px;
+    line-height: 1.7;
+    color: $thermal-text-light;
+  }
+}
+
+@media (max-width: 991px) {
+  .thermal-hero {
+    padding: 40px 0 80px;
+
+    &__title {
+      font-size: 48px;
+    }
+
+    &__visual {
+      margin-top: 40px;
+    }
+
+    &__panel img {
+      height: 420px;
+    }
+  }
+
+  .thermal-section {
+    padding: 72px 0;
+
+    &__title {
+      font-size: 38px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .thermal-hero {
+    &__title {
+      font-size: 38px;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+
+    &__stats {
+      grid-template-columns: 1fr;
+    }
+
+    &__badge {
+      position: static;
+      margin-top: 16px;
+    }
+
+    &__panel img {
+      height: 320px;
+    }
+  }
+
+  .thermal-section {
+    &__title {
+      font-size: 32px;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+  }
+}

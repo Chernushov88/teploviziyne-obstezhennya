@@ -1,3 +1,6 @@
+@import "./variables.scss";
+@import "./modules/thermal-inspection";
+
 @font-face {
   font-family: "RobotoCondensed";
   src:
@@ -123,12 +126,7 @@ body {
     width: 100%;
     height: 100%;
     inset: 0;
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.6) 0%,
-      rgba(0, 0, 0, 0.3) 50%,
-      rgba(0, 0, 0, 0.7) 100%
-    );
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.7) 100%);
   }
   &-menu {
     width: 100%;
@@ -340,12 +338,7 @@ body {
         left: -60%;
         width: 50%;
         height: 100%;
-        background: linear-gradient(
-          120deg,
-          transparent,
-          rgba(255, 255, 255, 0.6),
-          transparent
-        );
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
         transition: transform 0.6s ease;
       }
     }
