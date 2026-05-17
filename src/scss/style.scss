@@ -118,6 +118,10 @@ body {
   padding-bottom: 15px;
   padding-top: 32px;
   height: 100vh;
+  background: url(https://www.otos.com.ua/img/teplovision_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
   &::before {
     content: "";
     position: absolute;
