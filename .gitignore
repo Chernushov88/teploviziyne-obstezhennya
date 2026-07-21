@@ -17,3 +17,4 @@ node_modules
 /dist/*
 dist/
 /src/css/style.css
+/PDS/*

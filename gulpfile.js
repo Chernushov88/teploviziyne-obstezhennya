@@ -232,18 +232,6 @@ gulp.task("clean-dist", function () {
   return gulp.src(DIST, { read: false, allowEmpty: true }).pipe(clean());
 });
 
-// function cleanCss() {
-//   return gulp
-//     .src(["./src/css/style.css"], { read: false, allowEmpty: true })
-//     .pipe(clean());
-// }
-
-// function cleanJS() {
-//   return gulp
-//     .src(["./src/js/common.min.js"], { read: false, allowEmpty: true })
-//     .pipe(clean());
-// }
-
 //
 // SERVER (з dist)
 //
@@ -259,26 +247,6 @@ gulp.task("connect", function () {
     }),
   );
 });
-
-// function ftpDeploy() {
-//   var conn = ftp.create({
-//     host: process.env.FTP_HOST,
-//     user: process.env.FTP_USER,
-//     password: process.env.FTP_PASS,
-//     parallel: 5,
-//     log: fancy.log,
-//   });
-//   const globs = [
-//     "dist/**",
-//     "!node_modules/**",
-//     "!.git/**",
-//     "!.gitlab-ci.yml",
-//     "!.env",
-//   ];
-//   return gulp
-//     .src(globs, { buffer: false })
-//     .pipe(conn.dest("/var/www/test.lexstatus.com.ua/teploviziyne-obstezhennya"));
-// }
 
 //
 // WATCH
