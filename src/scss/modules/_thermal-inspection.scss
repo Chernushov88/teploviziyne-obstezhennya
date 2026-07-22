@@ -215,9 +215,15 @@
     height: 68px;
     margin-bottom: 22px;
     border-radius: 20px;
-    background: linear-gradient(135deg, rgba($thermal-red, 0.14), rgba($blue, 0.12));
-    color: $thermal-red;
-    font-size: 28px;
+    box-shadow:
+      inset -1px 3px 8px 5px rgba(0, 0, 0, 0.01),
+      2px 5px 16px 0px rgba(0, 0, 0, 0.3),
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__card-title {
@@ -292,8 +298,7 @@
 
   &__item {
     height: 100%;
-    padding: 28px;
-    border-radius: 24px;
+    // border-radius: 24px;
     background: linear-gradient(180deg, rgba($thermal-white, 0.96), rgba($thermal-white, 0.82));
     border: 1px solid rgba($thermal-white, 0.1);
     box-shadow: $shadow-sm;
@@ -307,18 +312,27 @@
     }
   }
 
-  &__number {
-    display: inline-flex;
+  &__images {
+    overflow: hidden;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 20px;
-    border-radius: 16px;
-    background-color: rgba($yellow, 0.24);
-    color: $thermal-red;
+    width: 100%;
     font-size: 20px;
     font-weight: 700;
+
+    picture {
+      width: 100%;
+    }
+
+    img {
+      // max-height: 250px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    padding: 25px;
   }
 
   &__title {
@@ -428,5 +442,12 @@
     &__text {
       font-size: 18px;
     }
+  }
+}
+
+@media (max-width: 420px) {
+  .thermal-hero__badge {
+    width: 100%;
+    justify-content: center;
   }
 }

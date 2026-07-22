@@ -247,14 +247,43 @@ gulp.task("connect", function () {
     }),
   );
 });
+gulp.task("copy-slick-fonts", function () {
+  return gulp
+    .src(["node_modules/slick-carousel/slick/fonts/*"])
+    .pipe(gulp.dest(`${DIST}/css/fonts`));
+});
+gulp.task("copy-slick-images", function () {
+  return gulp
+    .src(["node_modules/slick-carousel/slick/ajax-loader.gif"])
+    .pipe(gulp.dest(`${DIST}/css`));
+});
+gulp.task("copy-lightgallery-assets", function () {
+  return gulp
+    .src(
+      [
+        "node_modules/lightgallery.js/dist/css/fonts/*",
+        "node_modules/lightgallery.js/dist/img/*",
+      ],
+      { base: "node_modules/lightgallery.js/dist/css" },
+    )
+    .pipe(gulp.dest(`${DIST}/css`));
+});
+gulp.task(
+  "copy-vendor-assets",
+  gulp.parallel(
+    "copy-slick-fonts",
+    "copy-slick-images",
+    "copy-lightgallery-assets",
+  ),
+);
 
 //
 // WATCH
 //
 function watchFiles() {
   gulp.watch(
-    "./src/scss/*.scss",
-    gulp.series("clean-css", "styles", "minifyhtml"),
+    "./src/scss/**/*.scss",
+    gulp.series("clean-css", "styles", "copy-vendor-assets", "minifyhtml"),
   );
   gulp.watch("./src/*.html", gulp.series("minifyhtml"));
   gulp.watch("./src/img/svg/*.svg", gulp.series(["svg-sprite"]));
@@ -271,6 +300,7 @@ function watchFiles() {
 const build = gulp.series(
   "clean-css",
   "clean-js",
+  "copy-vendor-assets",
   "styles",
   "minify-main-js",
   "scripts",

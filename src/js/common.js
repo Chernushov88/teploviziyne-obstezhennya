@@ -124,9 +124,29 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   let navbar = document.querySelector(".navbar-toggler");
   let overlay = document.querySelector(".collapse-overlay");
+  let collapse = document.querySelector(".navbar-collapse");
+
   navbar.addEventListener("click", function () {
     overlay.classList.toggle("show");
   });
+
+  overlay.addEventListener("click", function () {
+    if (window.innerWidth < 992) {
+      collapse.classList.remove("show");
+      overlay.classList.remove("show");
+    }
+  });
+
+  document
+    .querySelectorAll('.navbar-nav .nav-link[href^="#"]')
+    .forEach((link) => {
+      link.addEventListener("click", function () {
+        if (window.innerWidth < 992) {
+          collapse.classList.remove("show");
+          overlay.classList.remove("show");
+        }
+      });
+    });
 
   var swiper = new Swiper(".swiper-container", {
     effect: "fade",
@@ -174,10 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
       clickable: true,
     },
   });
-
-
-
-
 });
 
 //send form
@@ -260,5 +276,16 @@ document.addEventListener("submit", (e) => {
 });
 
 $(document).ready(function () {
-  $(".single-item").slick({});
+  $(".single-item").slick({
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 7000,
+    infinite: true,
+    draggable: true,
+    touchMove: true,
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    pauseOnDotsHover: false,
+  });
 });
