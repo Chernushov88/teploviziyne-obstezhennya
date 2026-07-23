@@ -7,7 +7,7 @@ require '/var/www/lexstatus.ua/PHPMailer/src/PHPMailer.php';
 require '/var/www/lexstatus.ua/PHPMailer/src/SMTP.php';
 
 $recepient = "lexstatus2016@gmail.com, project+15195@lexstatus.planfix.ua";
-$sitename = "Технічне обстеження будівель та споруд";
+$sitename = "Тепловізійне обстеження будівель та споруд";
 
 function post($key) {
 	return isset($_POST[$key]) ? trim($_POST[$key]) : '';
@@ -74,13 +74,13 @@ try {
 	$mailer->Host = 'mail.lexstatus.com.ua';
 	$mailer->SMTPAuth = true;
 	$mailer->Username = 'lexsendmailpf@lexstatus.ua';
-	$mailer->Password   = '123qweasDzxC!'; 
+	$mailer->Password   = '123qweasDzxC!';
 	$mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 	$mailer->Port = 587;
 
 	$mailer->CharSet = 'UTF-8';
 	$mailer->setFrom('lexsendmailpf@lexstatus.ua', 'LexStatus');
-	
+
 	foreach (explode(',', $recepient) as $email) {
 			$mailer->addAddress(trim($email));
 	}
