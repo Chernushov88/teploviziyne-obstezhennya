@@ -358,6 +358,11 @@
     border-radius: 24px;
     background-color: $thermal-white;
     box-shadow: $shadow-sm;
+
+    @media (max-width: 767px) {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
 
   &__name {

@@ -288,4 +288,20 @@ $(document).ready(function () {
     pauseOnFocus: false,
     pauseOnDotsHover: false,
   });
+
+  $(".feedback-slick").slick({
+    slidesToShow: 2, // default desktop values
+    slidesToScroll: 1,
+    dots: false,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 800, // mobile breakpoint
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
 });
